@@ -16,7 +16,6 @@ export default function Home() {
           sizes="100vw"
           style={{ width: '100%', height: 'auto' }} 
         />
-        <Header />
         <MainText/>
       </main>
     </div>
