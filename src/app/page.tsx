@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Header from './components/Header'
 import MainText from './components/MainText'
 
 
