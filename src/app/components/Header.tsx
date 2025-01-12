@@ -6,8 +6,11 @@ import Button from '@mui/material/Button';
 import Link from 'next/link';
 
 const navItems = {
-  '/about': {
-    name: 'About Us',
+  '/': {
+    name: 'Home',
+  },
+  '/events': {
+    name: 'Events',
   },
   '/FAQ': {
     name: 'FAQ',
