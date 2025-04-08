@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Heading, Text } from "@/app/components/ui/typography";
 import { Button } from "@/app/components/ui/button";
 
 export default function HomePage() {
@@ -151,7 +150,7 @@ function EventCard({ title, date, location, category }: { title: string; date: s
 function TestimonialCard({ quote, author, role }: { quote: string; author: string; role: string }) {
   return (
     <div className="bg-white/10 p-6 rounded-lg">
-      <p className="text-lg mb-4 italic">"{quote}"</p>
+      <p className="text-lg mb-4 italic">&quot;{quote}&quot;</p>
       <div>
         <p className="font-semibold">{author}</p>
         <p className="text-white/70 text-sm">{role}</p>
