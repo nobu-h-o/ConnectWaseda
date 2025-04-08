@@ -1,0 +1,33 @@
+name: Next.js Lint
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint:
+    name: Run Next.js Lint
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Run Next.js lint
+        run: npm run lint
+        
+      - name: Report lint results
+        if: always()
+        run: |
+          echo "Lint check completed. Exit code ${{ job.status }}"
