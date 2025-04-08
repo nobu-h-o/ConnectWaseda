@@ -39,19 +39,22 @@ body {
 }
 
 .topText {
-  margin: 0 3rem;
+  margin: 3rem 3rem;
+}
+
+.topText h1 {
+  font-size: 3rem;
 }
 
 .topText p {
-  font-size: 0.8rem;
-  margin-bottom: -0.5rem;
+  font-size: 1rem;
 }
 
 .joinButton {
   background-color: rgba(160, 167, 224, 0.72);
   width: 7rem;
   text-align: center;
-  padding: 3px;
+  padding: 15px;
   margin-top: 15rem;
   margin-left: 3rem;
   cursor: pointer;
@@ -94,9 +97,7 @@ body {
   cursor: pointer;
 }
 
-.tab1 p,
-.tab2 p,
-.tab3 p {
+.tab1 p, .tab2 p, .tab3 p {
   width: 50%;
 }
 
@@ -107,7 +108,7 @@ body {
   transition: text-shadow 0.2s ease-in-out;
 }
 
-.tab1 p {
+.tab2 p, .tab3 p {
   margin-top: 0.5rem;
 }
 
