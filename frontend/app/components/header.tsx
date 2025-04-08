@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Header() {
   return (
     <header>
@@ -8,9 +10,11 @@ export default function Header() {
         <p>About Us</p>
         <p>FAQ</p>
         <p>Contact</p>
-        <div className="signIn">
-          <p>Sign In</p>
-        </div>
+        <Link href='signin'>
+          <div className="signIn">
+            <p>Sign In</p>
+          </div>
+        </Link>
       </div>
     </header>
   )
