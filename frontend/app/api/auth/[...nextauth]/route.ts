@@ -33,7 +33,7 @@ const googleClientSecret = getRequiredEnvVar("GOOGLE_CLIENT_SECRET");
 const nextAuthSecret = getRequiredEnvVar("NEXTAUTH_SECRET");
 
 // Auth options configuration
-export const authOptions: AuthOptions = {
+const authOptions: AuthOptions = {
   providers: [
     GoogleProvider({
       clientId: googleClientId,
