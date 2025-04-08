@@ -3,14 +3,13 @@ export default function Header() {
     <header>
       <div className="header">
         <div className="projectName">
-          <p>Project Name</p>
+          <p>ConnectWaseda</p>
         </div>
         <p>About Us</p>
         <p>FAQ</p>
         <p>Contact</p>
-        <p>Log In</p>
-        <div className="signUp">
-          <p>Sign Up</p>
+        <div className="signIn">
+          <p>Sign In</p>
         </div>
       </div>
     </header>

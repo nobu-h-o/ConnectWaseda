@@ -1,6 +1,6 @@
-import Header from "@/components/header"
-import Footer from "@/components/footer"
-import EventTabs from "@/components/event-tabs"
+import Header from "./components/header"
+import Footer from "./components/footer"
+import EventTabs from "./components/event-tabs"
 
 export default function Home() {
   return (
