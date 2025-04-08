@@ -8,9 +8,8 @@ export default function Header() {
         <p>About Us</p>
         <p>FAQ</p>
         <p>Contact</p>
-        <p>Log In</p>
-        <div className="signUp">
-          <p>Sign Up</p>
+        <div className="signIn">
+          <p>Sign In</p>
         </div>
       </div>
     </header>
