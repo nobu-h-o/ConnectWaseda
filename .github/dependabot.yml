@@ -9,7 +9,7 @@ updates:
     directory: "frontend"
     schedule:
       interval: "weekly"
-  - package-ecosystem: "pip"
+  - package-ecosystem: "poetry"
     directory: "backend"
     schedule:
       interval: "weekly"
