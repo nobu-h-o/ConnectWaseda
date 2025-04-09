@@ -1,10 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/app/components/ui/button";
+import Header from "@/app/components/header";
+import Footer from "@/app/components/footer";
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-[#2c3050] text-white">
+      <Header />
+      
       {/* Hero Section */}
       <section className="pt-20 px-4 md:px-12 lg:px-24 max-w-7xl mx-auto">
         <div className="flex flex-col items-center text-center mb-16">
@@ -115,6 +119,8 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 }
