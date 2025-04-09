@@ -30,7 +30,7 @@ PyJWT==2.3.0
 pyparsing==2.4.7
 python-apt==2.4.0+ubuntu2
 python-decouple==3.8
-pyxattr==0.7.2
+pyxattr==0.8.1
 PyYAML==5.4.1
 SecretStorage==3.3.1
 six==1.16.0
