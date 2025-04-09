@@ -22,6 +22,7 @@ from django.http import HttpResponse
 urlpatterns = [
     path('', lambda request: HttpResponse("Welcome to Connect Waseda Backend!"), name='home'),
     path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
     path('api/users/', include('Connect_Waseda_backend.users.urls')), # Groups all users endpoints under /api/users/
     #path('api/meetups/', include('Connect_Waseda_backend.meetups.urls')), # Groups all meetups endpoints under /api/meetups/
 ]

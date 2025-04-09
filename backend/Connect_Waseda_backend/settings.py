@@ -52,6 +52,11 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
 
+    'allauth',
+    'allauth.account.apps.AccountConfig',
+    'allauth.socialaccount.apps.SocialAccountConfig',
+    'allauth.socialaccount.providers.google',
+
     'Connect_Waseda_backend.users',
     'Connect_Waseda_backend.meetups',
 
@@ -63,6 +68,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
