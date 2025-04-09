@@ -1,8 +1,19 @@
-import Header from "./components/header"
-import Footer from "./components/footer"
-import EventTabs from "./components/event-tabs"
+import { redirect } from "next/navigation";
+import { getServerSession } from "next-auth/next";
+import Header from "./components/header";
+import Footer from "./components/footer";
+import EventTabs from "./components/event-tabs";
 
-export default function Home() {
+export default async function Home() {
+  // Check if user is authenticated
+  const session = await getServerSession();
+  
+  // If not authenticated, redirect to the home page
+  if (!session) {
+    redirect("/home");
+  }
+  
+  // If authenticated, show the current content
   return (
     <main>
       <Header />
@@ -22,6 +33,6 @@ export default function Home() {
 
       <Footer />
     </main>
-  )
+  );
 }
 
