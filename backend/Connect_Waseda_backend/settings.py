@@ -14,9 +14,15 @@ from pathlib import Path
 import os
 import environ
 
-env = environ.Env(
-    DEBUG=(bool, False)
-)
+
+
+env = environ.Env(DEBUG=(bool, False))
+BASE_DIR = Path(__file__).resolve().parent.parent
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
+# env = environ.Env(
+#     DEBUG=(bool, False)
+# )
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -129,8 +135,12 @@ WSGI_APPLICATION = 'Connect_Waseda_backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env('POSTGRES_DB'),
+        'USER': env('POSTGRES_USER'),
+        'PASSWORD': env('POSTGRES_PASSWORD'),
+        'HOST': env('POSTGRES_HOST'),
+        'PORT': env('POSTGRES_PORT', default='5432'),
     }
 }
 
