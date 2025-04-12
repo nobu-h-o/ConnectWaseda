@@ -13,29 +13,12 @@ body {
 .header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  padding-top: 1rem;
-  margin: 0 3rem;
-}
-
-.header p {
-  font-size: 0.8rem;
-  cursor: pointer;
-}
-
-.projectName {
-  color: #ff7230;
+  margin: 0.3rem 3rem;
+  border: solid red 2px;
 }
 
 .projectName p {
-  font-size: 1rem;
-}
-
-.signIn {
-  background-color: rgba(160, 167, 224, 0.72);
-  padding: 0 15px;
-  text-align: center;
-  cursor: pointer;
+  font-size: 1.3rem;
 }
 
 .topText {
@@ -48,16 +31,6 @@ body {
 
 .topText p {
   font-size: 1rem;
-}
-
-.joinButton {
-  background-color: rgba(160, 167, 224, 0.72);
-  width: 7rem;
-  text-align: center;
-  padding: 15px;
-  margin-top: 15rem;
-  margin-left: 3rem;
-  cursor: pointer;
 }
 
 .header p:hover,
@@ -84,9 +57,7 @@ body {
   width: 3rem;
 }
 
-.tab1,
-.tab2,
-.tab3 {
+.tab1, .tab2, .tab3 {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -117,7 +88,6 @@ body {
 }
 
 .tab-content {
-  display: none;
   padding: 20px;
   background-color: rgba(160, 167, 224, 0.4);
   text-align: center;
