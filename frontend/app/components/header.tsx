@@ -14,10 +14,6 @@ export default function Header() {
           ConnectWaseda
         </div>
 
-        <p>About Us</p>
-        <p>FAQ</p>
-        <p>Contact</p>
-        
         {isAuthenticated ? (
           <div 
             className="signIn" 
