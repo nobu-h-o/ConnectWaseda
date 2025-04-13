@@ -15,8 +15,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include 
+from django.http import HttpResponse
+# adding user registration
 
 urlpatterns = [
+    path('', lambda request: HttpResponse("Welcome to Connect Waseda Backend!"), name='home'),
     path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
+    path('api/users/', include('Connect_Waseda_backend.users.urls')), # Groups all users endpoints under /api/users/
+    #path('api/meetups/', include('Connect_Waseda_backend.meetups.urls')), # Groups all meetups endpoints under /api/meetups/
 ]
