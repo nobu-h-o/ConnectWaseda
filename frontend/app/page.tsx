@@ -14,7 +14,7 @@ export default function Home() {
         <p>Join and host events of your own now!</p>
       </div>
 
-      <button className="bg-[rgba(160,167,224,0.72)] text-center px-6 py-3 mt-60 ml-12 cursor-pointer rounded-full shadow transition duration-200 hover:shadow-lg hover:brightness-110">
+      <button className="bg-[rgba(160,167,224,0.72)] text-center px-7 py-4 mt-60 ml-12 cursor-pointer rounded-full shadow transition duration-200 hover:shadow-lg hover:brightness-110">
         JOIN NOW
       </button>
 

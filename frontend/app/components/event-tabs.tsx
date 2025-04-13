@@ -70,16 +70,18 @@ export default function EventTabs() {
           <>
             <h2 className="text-2xl font-semibold mt-8 mb-2">{tabItems[0].title}</h2>
             <p className="mb-1">{tabItems[0].description}</p>
-            <div className="eventCards grid grid-cols-3 gap-4 text-black">
-              {Array.from({ length: 6 }, (_, i) => (
-                <div
-                  key={i}
-                  className="bg-[#ffece3] h-40 flex items-center justify-center text-xl rounded-xl shadow"
-                >
-                  Waseda Event {i + 1}
-                </div>
-              ))}
-            </div>
+            
+            <div className="eventCards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center text-black transition-all duration-300">
+  {Array.from({ length: 6 }, (_, i) => (
+    <div
+      key={i}
+      className="bg-[#ffece3] h-80 min-w-[15rem] sm:w-[18rem] lg:w-[20rem] px-6 py-4 flex items-center justify-center text-xl rounded-lg sm:rounded-md lg:rounded-full shadow"
+    >
+      Waseda Event {i + 1}
+    </div>
+    ))}
+    </div>
+
           </>
         )}
 
@@ -87,7 +89,7 @@ export default function EventTabs() {
           <>
             <h2 className="text-2xl font-semibold mt-8 mb-2">{tabItems[1].title}</h2>
             <p className="mb-1">{tabItems[1].description}</p>
-            <div className="eventCards grid grid-cols-3 gap-4 text-black">
+            <div className="eventCards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center text-black transition-all duration-300">
               {Array.from({ length: 6 }, (_, i) => (
                 <div
                   key={i}
@@ -105,46 +107,50 @@ export default function EventTabs() {
             <h2 className="text-2xl font-semibold mt-8 mb-2">
               Search By Keyword
             </h2>
-            <p className="mb-12">
+            <p className="mb-8">
               Find events based on clubs, societies, or categories.
             </p>
             <div className="flex flex-col gap-4 items-center">
               <input
                 type="text"
-                placeholder="e.g. Music, Tech, Volunteer"
-                className="px-4 py-2 rounded-md w-80 text-black bg-white border-none"
+                placeholder="e.g. GDG, TedX, Dance"
+                className="px-4 py-2 w-[60%] bg-[#ffece3] rounded-full text-black border-none"
               />
-              <button className="bg-[#a0a7e0b7] px-6 py-2 rounded-full shadow hover:brightness-110 text-white">
+              <button className="bg-[#a0a7e0b7] px-8 py-4 mt-5 rounded-full shadow hover:brightness-110 text-white">
                 Search
               </button>
             </div>
                 {/* Categories */}
-                <h2 className="text-2xl font-semibold mt-8 mb-12">
+                <h2 className="text-2xl font-semibold mt-20 mb-10">
               Filter by Category
             </h2>
             <div className="flex justify-center">
-      <div className="grid grid-cols-2 gap-x-24 gap-y-4 text-left text-white">
-        {[
-          "Language-Focused",
-          "Dance",
-          "Career",
-          "Volunteering",
-          "Art",
-          "Sports",
-          "Tech",
-          "Cultural Exchange",
-        ].map((category, i) => (
-          <label key={i} className="flex items-center space-x-2">
-            <input type="checkbox" className="accent-[#ff7230]" />
-            <span>{category}</span>
-          </label>
-        ))}
-      </div>
-    </div>
+  <div className="grid grid-cols-2 gap-x-24 gap-y-8 text-left rounded-2xl cursor-pointer text-[#2c3050] bg-[#ffece3] p-10 w-[60%] mx-auto">
+    {[
+      "Language-Focused",
+      "Dance",
+      "Career",
+      "Volunteering",
+      "Art",
+      "Sports",
+      "Tech",
+      "Cultural Exchange",
+      "Art",
+      "Music",
+      "Science",
+      "Food",
+    ].map((category, i) => (
+      <label key={i} className="flex items-center cursor-pointer space-x-2 text-lg sm:text-xl md:text-2xl">
+        <input type="checkbox" className="accent-[#ff7230] border-none" />
+        <span>{category}</span>
+      </label>
+    ))}
+  </div>
+</div>
 
         {/* Search Button */}
-        <div className="mt-12 flex justify-center">
-        <button className="bg-[#a0a7e0b7] px-6 py-2 rounded-full shadow hover:brightness-110 text-white">
+        <div className="mt-10 flex justify-center">
+        <button className="bg-[#a0a7e0b7] px-8 py-4 rounded-full shadow hover:brightness-110 text-white">
                 Search
               </button>
     </div>

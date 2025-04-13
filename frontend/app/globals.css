@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Prevent horizontal scrolling */
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Alata", sans-serif;
   background-color: #2c3050;
@@ -100,16 +105,17 @@ body {
 .eventCards {
   color: rgb(46, 45, 45);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem; 
+  grid-template-columns: repeat(3, 1fr); 
 }
 
 .eventCards > div {
   background-color: #ffece3;
-  padding: 20px;
-  margin: 3rem;
+  margin: 1.5rem;
   font-size: 30px;
   text-align: center;
-  height: 15rem;
+  height: 20rem;
+  width: 15rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -118,7 +124,60 @@ body {
   min-width: 0;
   overflow-wrap: break-word;
   white-space: normal;
-  border-radius: 13%;
+  border-radius: 2rem; /* Try using a fixed value here */
+}
+
+/* General styles for event cards */
+.eventCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem; /* Default gap between the cards */
+  width: 100%; /* Full width */
+  max-width: 100vw; /* Ensure it never overflows */
+  padding: 0 1rem; /* Padding to prevent touching the sides */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Small screens (phones) */
+@media (max-width: 768px) {
+  .eventCards {
+    grid-template-columns: 1fr; /* One card per row */
+    gap: 1rem; /* Adjust gap for small screens */
+  }
+
+  .eventCards > div {
+    width: 100%; /* Full width of the parent container */
+    height: 14rem; /* Keep the aspect ratio consistent */
+    font-size: 18px; /* Adjust font size */
+  }
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .eventCards {
+    grid-template-columns: repeat(3, 1fr); /* Three cards per row */
+    gap: 1.5rem; /* Increased gap between cards */
+  }
+
+  .eventCards > div {
+    width: 90%; /* Slightly smaller than the default width */
+    height: 18rem; /* Adjusted height */
+    font-size: 22px; /* Slightly larger text */
+  }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 1024px) {
+  .eventCards {
+    grid-template-columns: repeat(3, 1fr); /* Three cards per row */
+    gap: 0rem; /* Larger gap between cards */
+  }
+
+  .eventCards > div {
+    width: 22rem; /* Larger card width */
+    height: 23rem; /* Larger card height */
+    font-size: 26px; /* Larger text */
+  }
 }
 
 footer {
