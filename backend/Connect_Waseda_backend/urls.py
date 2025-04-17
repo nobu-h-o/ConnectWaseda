@@ -24,5 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('api/users/', include('Connect_Waseda_backend.users.urls')), # Groups all users endpoints under /api/users/
+    path('api/events/', include('Connect_Waseda_backend.events.urls')),
     #path('api/meetups/', include('Connect_Waseda_backend.meetups.urls')), # Groups all meetups endpoints under /api/meetups/
 ]
