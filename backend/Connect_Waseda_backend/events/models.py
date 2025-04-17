@@ -3,6 +3,7 @@ from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.utils import timezone
 
+
 class Event(models.Model):
     organizer = models.ForeignKey(
         settings.AUTH_USER_MODEL, 
