@@ -10,11 +10,14 @@ class EventSerializer(serializers.ModelSerializer):
             "organizer",
             "title",
             "description",
+            "category",    
+            "language",
             "date",
             "time",
             "on_campus",
             "capacity",
             "booked",
+            "host_notes",
         ]
         read_only_fields = ["organizer", "booked"]
 
