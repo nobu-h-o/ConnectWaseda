@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     
     'corsheaders',
     'rest_framework',
+    'rest_framework.authtoken',
 
     'allauth',
     'allauth.account.apps.AccountConfig',
@@ -65,6 +66,8 @@ INSTALLED_APPS = [
 
     'Connect_Waseda_backend.users',
     'Connect_Waseda_backend.meetups',
+    'Connect_Waseda_backend.events',
+    
 
     
 ]
