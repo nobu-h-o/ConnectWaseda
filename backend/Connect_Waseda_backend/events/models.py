@@ -14,11 +14,14 @@ class Event(models.Model):
     )
     title       = models.CharField(max_length=200)
     description = models.TextField(blank=True)
+    category = models.TextField(blank=True)
+    language = models.TextField(blank=True)
     date        = models.DateField()
     time        = models.TimeField()
     on_campus   = models.BooleanField(default=True)
     capacity    = models.PositiveIntegerField(null=True, blank=True)
     booked      = models.PositiveIntegerField(default=0)
+    host_notes = models.TextField(blank=True)
     created_at  = models.DateTimeField(auto_now_add=True)
 
     def clean(self):
