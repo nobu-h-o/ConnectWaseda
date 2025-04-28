@@ -1,7 +1,13 @@
-import type React from "react"
+import type { ReactNode } from "react"
 import type { Metadata } from "next"
+import { Alata } from "next/font/google" 
 import "./globals.css"
-import { Providers } from "./providers"
+
+const alata = Alata({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: "Waseda Event Project",
@@ -11,18 +17,11 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: ReactNode
 }) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alata&display=swap" />
-      </head>
-      <body>
-        <Providers>
-          {children}
-        </Providers>
-      </body>
+    <html lang="en" className={alata.className}>
+      <body>{children}</body>
     </html>
   )
 }
