@@ -13,20 +13,26 @@ export default function Header() {
         <div className="text-[#ff7230] text-2xl font-semibold">
           ConnectWaseda
         </div>
-
         {isAuthenticated ? (
-          <div 
-            className="signIn" 
-            onClick={() => signOut({ callbackUrl: '/home' })}
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                signOut({ callbackUrl: '/home' })
-              }
-            }}
-          >
-            <p>Sign Out</p>
+          <div>
+            <Link href="/eventcreation">
+              <div>
+                <p>Create An Event</p>
+              </div>
+            </Link>
+            <div 
+              className="signIn" 
+              onClick={() => signOut({ callbackUrl: '/home' })}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  signOut({ callbackUrl: '/home' })
+                }
+              }}
+            >
+              <p>Sign Out</p>
+            </div>
           </div>
         ) : (
           <Link href="/signin">
