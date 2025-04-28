@@ -24,7 +24,7 @@ class SyncUserView(APIView):
 
         # Create or update the user record
         user, created = User.objects.get_or_create(email=email, defaults={
-            "username": email,  # you may adjust based on your username convention
+            "username": email,  
             "first_name": first_name,
             "last_name": last_name,
         })
