@@ -19,26 +19,11 @@ body {
   display: flex;
   flex-direction: row;
   margin: 0.3rem 3rem;
-  border: solid red 2px;
 }
 
 .projectName p {
   font-size: 1.3rem;
 }
-
-/* These are not needed 
-.topText {
-  margin: 3rem 3rem;
-}
-
-.topText h1 {
-  font-size: 3rem;
-}
-
-.topText p {
-  font-size: 5rem;
-}
-  */
 
 .header p:hover,
 .joinButton p:hover,
