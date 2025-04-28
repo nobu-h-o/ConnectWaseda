@@ -2,6 +2,7 @@ import type { ReactNode } from "react"
 import type { Metadata } from "next"
 import { Alata } from "next/font/google" 
 import "./globals.css"
+import { Providers } from "./providers"
 
 const alata = Alata({
   weight: '400',
