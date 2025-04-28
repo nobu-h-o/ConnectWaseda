@@ -114,11 +114,6 @@ export default function EventDetails() {
                 key={ev.id}
                 className="bg-[#FFECE3] rounded-xl overflow-hidden shadow-lg"
               >
-                <img
-                  src={ev.imageUrl}
-                  alt={`${ev.title} poster`}
-                  className="w-full h-40 object-cover"
-                />
                 <div className="p-4">
                   <h3 className="text-xl font-semibold text-[#2c3050] mb-2">
                     {ev.title}

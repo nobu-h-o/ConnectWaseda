@@ -1,4 +1,5 @@
 import Header from "@/app/components/header";
+import Link from "next/link"; // Import the Link component
 
 export default function CreateProfile() {
   return (
@@ -7,9 +8,9 @@ export default function CreateProfile() {
 
       {/* Breadcrumb */}
       <nav aria-label="Breadcrumb" className="w-full max-w-3xl mb-4">
-        <a href="/" className="text-sm text-gray-300 hover:text-white transition">
+        <Link href="/" className="text-sm text-gray-300 hover:text-white transition">
           ← Back to Home
-        </a>
+        </Link>
       </nav>
 
       {/* Title + Stepper */}
@@ -110,7 +111,7 @@ export default function CreateProfile() {
         />
       </form>
 
-      {/* Original “Next” button outside the form */}
+      {/* Original "Next" button outside the form */}
       <button
         className="mt-8 bg-[#A0A7E0] rounded-full px-10 py-5 text-base font-medium
                    transition-all duration-200 hover:brightness-105 mx-auto"
