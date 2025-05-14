@@ -14,6 +14,7 @@ class Event(models.Model):
     )
     title       = models.CharField(max_length=200)
     description = models.TextField(blank=True)
+    club_rep = models.BooleanField(default=True)
     category = models.TextField(blank=True)
     language = models.TextField(blank=True)
 
