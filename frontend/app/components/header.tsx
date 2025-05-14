@@ -8,15 +8,12 @@ export default function Header() {
   const isAuthenticated = status === "authenticated";
 
   return (
-    <header>
-      <div className="header">
-        <div className="projectName">
-          <p>ConnectWaseda</p>
+    <header className="">
+      <div className="flex items-center justify-between px-6 py-4">
+        <div className="text-[#ff7230] text-2xl font-semibold">
+          ConnectWaseda
         </div>
-        <p>About Us</p>
-        <p>FAQ</p>
-        <p>Contact</p>
-        
+
         {isAuthenticated ? (
           <div 
             className="signIn" 
