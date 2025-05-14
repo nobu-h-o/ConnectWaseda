@@ -9,6 +9,7 @@ class EventSerializer(serializers.ModelSerializer):
         fields = [
             "id",
             "organizer",
+            "club_rep",
             "title",
             "description",
             "category",
