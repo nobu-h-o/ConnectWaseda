@@ -1,7 +1,7 @@
 # ConnectWaseda Backend Setup
 Initialization
 ```shell
-poetry build
+poetry update
 ```
 
 Running the server
