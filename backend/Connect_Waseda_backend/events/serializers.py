@@ -43,5 +43,16 @@ class EventSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("Start date/time cannot be in the past.")
         if end_dt <= start_dt:
             raise serializers.ValidationError("End date/time must be after the start date/time.")
+        
+        
+        # checking for possible duplicate event 
+        if Event.objects.filter(
+              title=data["title"],
+              start_date=data["start_date"],
+              start_time=data["start_time"],
+           ).exists():
+            raise serializers.ValidationError({
+                "title": "An event with that title at the same date & time already exists."
+            })
 
         return data
