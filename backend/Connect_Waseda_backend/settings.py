@@ -90,6 +90,15 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # Next.js development server URL
 ]
 
+# CSRF settings
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000",  # Next.js development server URL
+]
+CSRF_COOKIE_SAMESITE = 'Lax'
+CSRF_COOKIE_HTTPONLY = False  # Must be False to allow JavaScript to read the token
+CSRF_USE_SESSIONS = False
+CSRF_COOKIE_NAME = 'csrftoken'
+
 # Add these additional CORS settings for better compatibility
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_METHODS = [
