@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { Event } from "@/app/types/event";
 import Header from "@/app/components/header";
 import Link from "next/link";
+import { Metadata } from "next";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 
@@ -30,12 +31,25 @@ function formatDateTime(date: string, time: string) {
   });
 }
 
-export default async function EventDetails({
-  params,
-}: {
-  params: { id: string };
+type EventParams = Promise<{ id: string }>;
+
+export async function generateMetadata(props: {
+  params: EventParams;
+}): Promise<Metadata> {
+  const { id } = await props.params;
+  const event = await getEvent(id);
+  
+  return {
+    title: event.title,
+    description: event.description,
+  };
+}
+
+export default async function EventDetails(props: {
+  params: EventParams;
 }) {
-  const event = await getEvent(params.id);
+  const { id } = await props.params;
+  const event = await getEvent(id);
 
   return (
     <div className="bg-[#2c3050] text-white min-h-screen">
@@ -128,4 +142,4 @@ export default async function EventDetails({
       </main>
     </div>
   );
-} 
+}
