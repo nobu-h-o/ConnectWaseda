@@ -136,16 +136,29 @@ WSGI_APPLICATION = 'Connect_Waseda_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('POSTGRES_DB'),
-        'USER': env('POSTGRES_USER'),
-        'PASSWORD': env('POSTGRES_PASSWORD'),
-        'HOST': env('POSTGRES_HOST'),
-        'PORT': env('POSTGRES_PORT', default='5432'),
+        'ENGINE':   'django.db.backends.postgresql',
+        'NAME':     env('DB_NAME'),
+        'USER':     env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'HOST':     env('DB_HOST', default='127.0.0.1'),
+        'PORT':     env('DB_PORT', default='5432'),
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': env('POSTGRES_DB'),
+#         'USER': env('POSTGRES_USER'),
+#         'PASSWORD': env('POSTGRES_PASSWORD'),
+#         'HOST': env('POSTGRES_HOST'),
+#         'PORT': env('POSTGRES_PORT', default='5432'),
+#     }
+# }
 
 
 # Password validation
