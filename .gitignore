@@ -3,6 +3,7 @@
 
 *.py[cod]
 __pycache__/
+connectwaseda-e5049fbb5d55.json
 
 # C extensions
 *.so

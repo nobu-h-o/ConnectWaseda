@@ -1,3 +1,4 @@
+
 from rest_framework import serializers
 from django.utils import timezone
 import datetime
@@ -45,7 +46,6 @@ class EventSerializer(serializers.ModelSerializer):
         if end_dt <= start_dt:
             raise serializers.ValidationError("End date/time must be after the start date/time.")
         
-        
         # checking for possible duplicate event 
         if Event.objects.filter(
               title=data["title"],
@@ -55,5 +55,6 @@ class EventSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError({
                 "title": "An event with that title at the same date & time already exists."
             })
-
+        
         return data
+
