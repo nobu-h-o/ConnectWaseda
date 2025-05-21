@@ -1,3 +1,4 @@
+
 from rest_framework import serializers
 from django.utils import timezone
 import datetime
@@ -56,3 +57,4 @@ class EventSerializer(serializers.ModelSerializer):
             })
         
         return data
+

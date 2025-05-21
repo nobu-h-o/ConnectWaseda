@@ -18,15 +18,13 @@ export default async function Home() {
     <main>
       <Header />
 
-      <div className="topText">
-        <h1>Friendship Starts Here.</h1>
-        <p>Sick of spending lunch break alone?</p>
-        <p>Want to join events catered to your interests?</p>
-        <p>Join and host events of your own now!</p>
-      </div>
-
-      <div className="joinButton">
-        <p>JOIN NOW</p>
+      <div className="text-center mt-16 px-4">
+        <h1 className="text-4xl sm:text-5xl font-bold mb-6">
+          Discover Events at <span className="text-[#ff7230]">Waseda</span>
+        </h1>
+        <p className="text-xl sm:text-2xl max-w-3xl mx-auto">
+          Connect with fellow students, find events that match your interests, and make the most of your university experience.
+        </p>
       </div>
 
       <EventTabs />

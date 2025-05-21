@@ -1,16 +1,8 @@
 'use client'
 
 import { SessionProvider } from 'next-auth/react'
-import { AuthProvider } from './api/auth/auth-provider'
-import SyncUser from './syncuser'
+import { ReactNode } from 'react'
 
-export function Providers({ children }: { children: React.ReactNode }) {
-  return (
-    <SessionProvider>
-      <AuthProvider>
-        <SyncUser />
-        {children}
-      </AuthProvider>
-    </SessionProvider>
-  )
+export default function Providers({ children }: { children: ReactNode }) {
+  return <SessionProvider>{children}</SessionProvider>;
 } 
