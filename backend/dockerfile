@@ -1,30 +1,32 @@
-# Backend Dockerfile
 FROM python:3.12-slim
 
-WORKDIR /app
-
-# Install system dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    libpq-dev \
-    && apt-get clean \
+# Install OS deps for psycopg2
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+      build-essential \
+      libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Poetry
-RUN pip install poetry
+# Set workdir
+WORKDIR /app
 
-# Copy the pyproject.toml and poetry.lock files
-COPY pyproject.toml poetry.lock* ./
+# Copy Poetry files
+COPY pyproject.toml poetry.lock ./
 
-# Configure poetry to not use a virtual environment
-RUN poetry config virtualenvs.create false \
-    && poetry install --no-interaction --no-ansi --no-root
+# Install Poetry and project deps
+RUN pip install poetry \
+    && poetry config virtualenvs.create false \
+    && poetry install --no-dev --no-interaction --no-ansi
 
-# Copy the rest of the application
+# Copy all code
 COPY . .
 
-# Expose the port the app runs on
-EXPOSE 8000
+# Expose port
+ENV PORT 8080
+EXPOSE 8080
 
-# Run the application
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# At startup: migrate and serve
+ENTRYPOINT ["sh", "-c", "\
+    python manage.py migrate --no-input && \
+    gunicorn Connect_Waseda_backend.wsgi:application \
+      --bind 0.0.0.0:${PORT} --workers 2"]
