@@ -18,10 +18,10 @@ class Event(models.Model):
     category = models.TextField(blank=True)
     language = models.TextField(blank=True)
 
-    start_date  = models.DateField()
-    start_time  = models.TimeField()
-    end_date    = models.DateField()
-    end_time    = models.TimeField()
+    start_date = models.DateField(null=True, blank=True)
+    start_time = models.TimeField(null=True, blank=True)
+    end_date   = models.DateField(null=True, blank=True)
+    end_time   = models.TimeField(null=True, blank=True)
     
 
     host_notes  = models.TextField(blank=True)
