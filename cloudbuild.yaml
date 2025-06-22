@@ -1,4 +1,4 @@
-# cloudbuild.yaml
+
 steps:
   - name: "gcr.io/cloud-builders/docker"
     args:
@@ -27,3 +27,8 @@ steps:
 
 images:
   - "gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA"
+
+options:
+  # send logs to Cloud Logging only (no GCS bucket required)
+  logging: CLOUD_LOGGING_ONLY
+
