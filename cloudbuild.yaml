@@ -1,4 +1,3 @@
-# cloudbuild.yaml
 steps:
   - name: "gcr.io/cloud-builders/docker"
     args:
@@ -13,17 +12,8 @@ steps:
     args:
       [ "push", "gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA" ]
 
-  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
-    entrypoint: bash
-    args:
-      - "-c"
-      - |
-        gcloud run deploy cwdef \
-          --image gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA \
-          --region asia-northeast1 \
-          --platform managed \
-          --allow-unauthenticated \
-          --set-env-vars "SECRET_KEY=$SECRET_KEY,DEBUG=$DEBUG,POSTGRES_HOST=$POSTGRES_HOST,POSTGRES_PORT=$POSTGRES_PORT,POSTGRES_DB=$POSTGRES_DB,POSTGRES_USER=$POSTGRES_USER,POSTGRES_PASSWORD=$POSTGRES_PASSWORD"
-
 images:
   - "gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA"
+
+options:
+  logging: "CLOUD_LOGGING_ONLY"
