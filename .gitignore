@@ -40,3 +40,4 @@ backend/poetry.lock
 # backend/Connect_Waseda_backend/events/migrations/0001_initial.py
 # backend/Connect_Waseda_backend/events/migrations/0002_alter_event_organizer.py
 # backend/Connect_Waseda_backend/meetups/migrations/0001_initial.py
+backend.zip
