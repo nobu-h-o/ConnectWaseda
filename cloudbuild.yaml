@@ -1,3 +1,4 @@
+# cloudbuild.yaml
 steps:
   - name: "gcr.io/cloud-builders/docker"
     args:
@@ -7,12 +8,13 @@ steps:
         "-f", "backend/Dockerfile",
         "backend"
       ]
+
   - name: "gcr.io/cloud-builders/docker"
     args:
       [ "push", "gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA" ]
 
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
-    entrypoint: "bash"
+    entrypoint: bash
     args:
       - "-c"
       - |
@@ -21,8 +23,7 @@ steps:
           --region asia-northeast1 \
           --platform managed \
           --allow-unauthenticated \
-          --set-env-vars \
-SECRET_KEY=$SECRET_KEY,DEBUG=$DEBUG,POSTGRES_HOST=$POSTGRES_HOST,POSTGRES_PORT=$POSTGRES_PORT,POSTGRES_DB=$POSTGRES_DB,POSTGRES_USER=$POSTGRES_USER,POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+          --set-env-vars "SECRET_KEY=$SECRET_KEY,DEBUG=$DEBUG,POSTGRES_HOST=$POSTGRES_HOST,POSTGRES_PORT=$POSTGRES_PORT,POSTGRES_DB=$POSTGRES_DB,POSTGRES_USER=$POSTGRES_USER,POSTGRES_PASSWORD=$POSTGRES_PASSWORD"
 
 images:
   - "gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA"
