@@ -13,5 +13,6 @@ dependencies = [
   "PyJWT (>=2.8.0,<3.0.0)",       # replacing jwt
   # "requests (>=2.32.3,<3.0.0)",  # only if you need it
   "requests (>=2.32.4,<3.0.0)",
-  "requests-oauthlib (>=2.0.0,<3.0.0)"
+  "requests-oauthlib (>=2.0.0,<3.0.0)",
+  "gunicorn (>=21.0.0,<24.0.0)"
 ]
