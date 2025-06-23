@@ -1,3 +1,6 @@
+options:
+  logging: CLOUD_LOGGING_ONLY
+
 steps:
   - name: "gcr.io/cloud-builders/docker"
     args:
@@ -7,13 +10,9 @@ steps:
         "-f", "backend/Dockerfile",
         "backend"
       ]
-
   - name: "gcr.io/cloud-builders/docker"
     args:
       [ "push", "gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA" ]
 
 images:
   - "gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA"
-
-options:
-  logging: "CLOUD_LOGGING_ONLY"
