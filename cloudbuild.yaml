@@ -6,13 +6,13 @@ steps:
     args:
       [
         "build",
-        "-t", "gcr.io/$PROJECT_ID/cwdef-backend:$COMMIT_SHA",
+        "-t", "gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA",
         "-f", "backend/Dockerfile",
         "backend"
       ]
   - name: "gcr.io/cloud-builders/docker"
     args:
-      [ "push", "gcr.io/$PROJECT_ID/cwdef-backend:$COMMIT_SHA" ]
+      [ "push", "gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA" ]
 
 images:
-  - "gcr.io/$PROJECT_ID/cwdef-backend:$COMMIT_SHA"
+  - "gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA"
