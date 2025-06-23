@@ -30,7 +30,9 @@ steps:
           --image=gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA \
           --platform=managed \
           --region=$_REGION \
-          --allow-unauthenticated
+          --allow-unauthenticated \
+          --set-env-vars \
+            POSTGRES_HOST=$POSTGRES_HOST,POSTGRES_PORT=$POSTGRES_PORT,POSTGRES_DB=$POSTGRES_DB,POSTGRES_USER=$POSTGRES_USER,POSTGRES_PASSWORD=$POSTGRES_PASSWORD,SECRET_KEY=$SECRET_KEY,DEBUG=$DEBUG
 
 images:
   - "gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA"
