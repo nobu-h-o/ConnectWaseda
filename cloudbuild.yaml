@@ -15,24 +15,23 @@ steps:
         "backend"
       ]
 
-  # 2) Push it to Container Registry
+  # 2) Push it
   - name: "gcr.io/cloud-builders/docker"
     args:
       [ "push", "gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA" ]
 
-  # 3) Deploy the newly pushed image to Cloud Run
+  # 3) Deploy to the single `cwdef` service
   - name: "gcr.io/cloud-builders/gcloud"
     entrypoint: "bash"
     args:
       - "-c"
       - |
-        gcloud run deploy cwdef-backend \
+        gcloud run deploy cwdef \
           --image=gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA \
           --platform=managed \
           --region=$_REGION \
           --allow-unauthenticated \
-          --set-env-vars \
-            POSTGRES_HOST=$POSTGRES_HOST,POSTGRES_PORT=$POSTGRES_PORT,POSTGRES_DB=$POSTGRES_DB,POSTGRES_USER=$POSTGRES_USER,POSTGRES_PASSWORD=$POSTGRES_PASSWORD,SECRET_KEY=$SECRET_KEY,DEBUG=$DEBUG
+          --set-env-vars POSTGRES_HOST=$POSTGRES_HOST,POSTGRES_PORT=$POSTGRES_PORT,POSTGRES_DB=$POSTGRES_DB,POSTGRES_USER=$POSTGRES_USER,POSTGRES_PASSWORD=$POSTGRES_PASSWORD,SECRET_KEY=$SECRET_KEY,DEBUG=$DEBUG
 
 images:
   - "gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA"
