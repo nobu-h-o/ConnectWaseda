@@ -1,7 +1,11 @@
 options:
   logging: CLOUD_LOGGING_ONLY
 
+substitutions:
+  _REGION: "asia-northeast1"
+
 steps:
+  # 1) Build the image
   - name: "gcr.io/cloud-builders/docker"
     args:
       [
@@ -10,9 +14,23 @@ steps:
         "-f", "backend/Dockerfile",
         "backend"
       ]
+
+  # 2) Push it to Container Registry
   - name: "gcr.io/cloud-builders/docker"
     args:
       [ "push", "gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA" ]
+
+  # 3) Deploy the newly pushed image to Cloud Run
+  - name: "gcr.io/cloud-builders/gcloud"
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+        gcloud run deploy cwdef-backend \
+          --image=gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA \
+          --platform=managed \
+          --region=$_REGION \
+          --allow-unauthenticated
 
 images:
   - "gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA"
