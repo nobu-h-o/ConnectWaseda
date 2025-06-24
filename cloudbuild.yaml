@@ -5,6 +5,7 @@ substitutions:
   _REGION: "asia-northeast1"
 
 steps:
+  # 1) Build the image
   - name: "gcr.io/cloud-builders/docker"
     args:
       [
@@ -14,13 +15,10 @@ steps:
         "backend"
       ]
 
-  # 2) Push it to Container Registry
   - name: "gcr.io/cloud-builders/docker"
     args:
       [ "push", "gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA" ]
 
-  # 3) Deploy to the SINGLE service,
-  #    
   - name: "gcr.io/cloud-builders/gcloud"
     entrypoint: "bash"
     args:
@@ -30,7 +28,7 @@ steps:
           --image=gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA \
           --platform=managed \
           --region=$_REGION \
-          --allow-unauthenticated
+          --allow-unauthenticated 
 
 images:
   - "gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA"
