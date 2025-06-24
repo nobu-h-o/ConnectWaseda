@@ -157,21 +157,25 @@ WSGI_APPLICATION = 'Connect_Waseda_backend.wsgi.application'
 #     }
 # }
 
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('POSTGRES_DB'),
-        'USER': env('POSTGRES_USER'),
-        'PASSWORD': env('POSTGRES_PASSWORD'),
-        'HOST': env('POSTGRES_HOST'),
-        'PORT': env('POSTGRES_PORT'),
-        'OPTIONS': {
-            'sslmode': 'require',
-        },
-
-    }
+    'default': env.db('DATABASE_URL')
 }
+
+# supabase credentials
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': env('POSTGRES_DB'),
+#         'USER': env('POSTGRES_USER'),
+#         'PASSWORD': env('POSTGRES_PASSWORD'),
+#         'HOST': env('POSTGRES_HOST'),
+#         'PORT': env('POSTGRES_PORT'),
+#         'OPTIONS': {
+#             'sslmode': 'require',
+#         },
+
+#     }
+# }
 
 
 # Password validation
