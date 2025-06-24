@@ -178,6 +178,10 @@ DATABASES = {
 #     }
 # }
 
+ALLOWED_HOSTS = [
+    "cwdef-914112773915.asia-northeast1.run.app",
+    "*",
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
