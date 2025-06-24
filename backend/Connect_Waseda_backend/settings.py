@@ -159,6 +159,7 @@ WSGI_APPLICATION = 'Connect_Waseda_backend.wsgi.application'
 
 DATABASES = {
     'default': env.db('DATABASE_URL')
+    
 }
 
 # supabase credentials
