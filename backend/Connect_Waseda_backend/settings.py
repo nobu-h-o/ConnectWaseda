@@ -145,7 +145,7 @@ WSGI_APPLICATION = 'Connect_Waseda_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-
+# local connection
 # DATABASES = {
 #     'default': {
 #         'ENGINE':   'django.db.backends.postgresql',
@@ -159,7 +159,7 @@ WSGI_APPLICATION = 'Connect_Waseda_backend.wsgi.application'
 
 DATABASES = {
     'default': env.db('DATABASE_URL')
-    
+
 }
 
 # supabase credentials

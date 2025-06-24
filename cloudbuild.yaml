@@ -15,20 +15,21 @@ steps:
         "backend"
       ]
 
+  # 2) Push it
   - name: "gcr.io/cloud-builders/docker"
-    args:
-      [ "push", "gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA" ]
+    args: [ "push", "gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA" ]
 
+  # 3) Deploy to your single service—and inherit the console’s env-vars
   - name: "gcr.io/cloud-builders/gcloud"
-    entrypoint: "bash"
+    entrypoint: bash
     args:
-      - "-c"
+      - -c
       - |
         gcloud run deploy cwdef \
           --image=gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA \
           --platform=managed \
           --region=$_REGION \
-          --allow-unauthenticated 
+          --allow-unauthenticated
 
 images:
   - "gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA"
