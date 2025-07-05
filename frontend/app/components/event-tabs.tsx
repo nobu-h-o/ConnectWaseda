@@ -110,7 +110,7 @@ export default function EventTabs() {
             width={48}
             height={48}
           />
-          <p>Created & Hosted By Students</p>
+          <p><span className="hidden sm:inline">Created & Hosted By </span>Students</p>
         </div>
 
         <div
@@ -124,7 +124,7 @@ export default function EventTabs() {
             width={64}
             height={64}
           />
-          <p>Events Hosted By Waseda</p>
+          <p><span className="hidden sm:inline">Events Hosted By </span>Waseda</p>
         </div>
 
         <div
@@ -138,7 +138,7 @@ export default function EventTabs() {
             width={48}
             height={48}
           />
-          <p>Search By Organization/Category</p>
+          <p><span className="hidden sm:inline">Search By Organization/Category</span><span className="sm:hidden">Search</span></p>
         </div>
       </div>
 
