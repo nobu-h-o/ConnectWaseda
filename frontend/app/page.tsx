@@ -1,7 +1,6 @@
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth/next";
 import Header from "./components/header";
-import Footer from "./components/footer";
 import EventTabs from "./components/event-tabs";
 
 export default async function Home() {
@@ -28,8 +27,6 @@ export default async function Home() {
       </div>
 
       <EventTabs />
-
-      <Footer />
     </main>
   );
 }
