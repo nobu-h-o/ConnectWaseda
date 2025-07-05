@@ -52,7 +52,7 @@ export default async function EventDetails(props: {
   const event = await getEvent(id);
 
   return (
-    <div className="bg-[#2c3050] text-white min-h-screen">
+    <div className="bg-[#F8F8F8] text-[#2E2B2B] min-h-screen">
       <Header />
       
       <main className="max-w-4xl mx-auto px-4 py-16">
@@ -60,7 +60,7 @@ export default async function EventDetails(props: {
         <nav className="mb-8">
           <Link 
             href="/"
-            className="text-[#ff7230] hover:text-[#ff8f5a] transition-colors"
+            className="text-[#9B2121] hover:text-[#ff8f5a] transition-colors"
           >
             ← Back to Events
           </Link>
@@ -70,7 +70,7 @@ export default async function EventDetails(props: {
         <div className="mb-12">
           <div className="flex flex-wrap items-start gap-4 mb-6">
             <h1 className="text-4xl font-bold flex-grow">{event.title}</h1>
-            <span className="inline-block bg-[#ff7230]/20 text-[#ff7230] px-4 py-2 rounded-full text-lg">
+            <span className="inline-block bg-[#9B2121]/20 text-[#9B2121] px-4 py-2 rounded-full text-lg">
               {event.category}
             </span>
           </div>
@@ -99,8 +99,8 @@ export default async function EventDetails(props: {
                   href={event.host_notes}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-[#ff7230] text-white py-3 px-6 rounded-full font-semibold
-                           hover:bg-[#ff8f5a] transition-colors text-center"
+                  className="inline-block bg-[#9B2121] text-[#2E2B2B] py-3 px-6 rounded-full font-semibold
+                           hover:bg-[#7a1b1b] transition-colors text-center"
                 >
                   Register & Get Event Details
                 </a>
@@ -110,7 +110,7 @@ export default async function EventDetails(props: {
 
           {/* Event Info Sidebar */}
           <div>
-            <div className="bg-[#ffece3] text-[#2c3050] p-6 rounded-2xl space-y-6">
+            <div className="bg-[#2E2B2B] text-[#FFFFFF] p-6 rounded-2xl space-y-6">
               {/* Date & Time */}
               <div>
                 <h3 className="font-semibold mb-2">Date and Time</h3>
@@ -147,7 +147,7 @@ export default async function EventDetails(props: {
                 rel="noopener noreferrer"
                 className={`w-full py-3 px-6 rounded-full font-semibold transition-colors text-center block ${
                   event.host_notes 
-                    ? 'bg-[#ff7230] text-white hover:bg-[#ff8f5a]' 
+                    ? 'bg-[#9B2121] text-[#2E2B2B] hover:bg-[#7a1b1b]' 
                     : 'bg-gray-400 text-gray-600 cursor-not-allowed'
                 }`}
                 onClick={!event.host_notes ? (e) => e.preventDefault() : undefined}

@@ -23,13 +23,13 @@ const relatedEventsData = [
 
 export default function EventDetails() {
   return (
-    <div className="bg-[#2c3050] text-white min-h-screen py-16 px-6">
+    <div className="bg-[#F8F8F8] text-[#2E2B2B] min-h-screen py-16 px-6">
       <div className="max-w-4xl mx-auto flex flex-col space-y-12">
         {/* Breadcrumb / Back Link */}
         <nav aria-label="Breadcrumb">
           <a
             href="/events"
-            className="text-lg text-gray-300 hover:text-white transition"
+            className="text-lg text-gray-300 hover:text-[#2E2B2B] transition"
           >
             ← Back to Events
           </a>
@@ -61,7 +61,7 @@ export default function EventDetails() {
           {/* Details + Reserve Button */}
           <section className="flex flex-col md:flex-row items-end md:space-x-8 space-y-8 md:space-y-0">
             {/* Details “Pillow” */}
-            <div className="flex-1 bg-[#FFECE3] text-[#2c3050] p-10 rounded-3xl space-y-6">
+            <div className="flex-1 bg-[#2E2B2B] text-[#FFFFFF] p-10 rounded-3xl space-y-6">
               <p className="text-xl">
                 <span className="font-semibold">Date / Time:</span>{" "}
                 <time dateTime="2023-04-17T15:00">
@@ -92,7 +92,7 @@ export default function EventDetails() {
             {/* Reserve Button */}
             <div className="flex-shrink-0">
               <button
-                className="bg-[#FFECE3] text-[#2c3050] rounded-full px-10 py-5 text-2xl font-semibold
+                className="bg-[#2E2B2B] text-[#FFFFFF] rounded-full px-10 py-5 text-2xl font-semibold
                            hover:brightness-105 transition-all"
                 aria-label="Reserve spot for this event"
               >
@@ -112,10 +112,10 @@ export default function EventDetails() {
             {relatedEventsData.map((ev) => (
               <div
                 key={ev.id}
-                className="bg-[#FFECE3] rounded-xl overflow-hidden shadow-lg"
+                className="bg-[#2E2B2B] rounded-xl overflow-hidden shadow-lg"
               >
                 <div className="p-4">
-                  <h3 className="text-xl font-semibold text-[#2c3050] mb-2">
+                  <h3 className="text-xl font-semibold text-[#FFFFFF] mb-2">
                     {ev.title}
                   </h3>
                   <time
@@ -131,7 +131,7 @@ export default function EventDetails() {
                   </time>
                   <a
                     href={`/events/${ev.id}`}
-                    className="inline-block px-4 py-2 bg-[#2c3050] text-white rounded-full hover:bg-[#1f2748] transition"
+                    className="inline-block px-4 py-2 bg-[#F8F8F8] text-[#2E2B2B] rounded-full hover:bg-[#1f2748] transition"
                   >
                     View
                   </a>

@@ -143,9 +143,9 @@ export default function EventTabs() {
       </div>
 
       {/* Tab Content */}
-      <div className="tab-content">
+      <div className="tab-content text-[#FFFFFF]">
         {error && (
-          <div className="text-red-500 mb-4 p-4 bg-red-100 rounded-lg">
+          <div className="text-[#9B2121] mb-4 p-4 bg-[#9B2121]/20 rounded-lg">
             {error}
           </div>
         )}
@@ -156,33 +156,33 @@ export default function EventTabs() {
           <>
             {activeTab !== 2 && (
               <>
-                <h2 className="text-2xl font-semibold mt-8 mb-2">{tabItems[activeTab].title}</h2>
-                <p className="mb-8">{tabItems[activeTab].description}</p>
+                <h2 className="text-2xl font-semibold mt-8 mb-2 text-[#FFFFFF]">{tabItems[activeTab].title}</h2>
+                <p className="mb-8 text-[#FFFFFF]">{tabItems[activeTab].description}</p>
                 
-                <div className="eventCards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center text-black">
+                <div className="eventCards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center text-[#FFFFFF]">
                   {getFilteredEvents().map((event) => (
                     <Link href={`/eventdetails/${event.id}`} key={event.id}>
-                      <div className="bg-[#ffece3] p-6 rounded-2xl shadow hover:shadow-lg transition-all duration-300 cursor-pointer h-full">
+                      <div className="bg-[#2E2B2B]/50 p-6 rounded-2xl shadow hover:shadow-lg transition-all duration-300 cursor-pointer h-full">
                         <div className="flex flex-col h-full">
                           <div className="mb-4">
-                            <span className="bg-[#ff7230]/20 text-[#ff7230] px-3 py-1 rounded-full text-sm">
+                            <span className="bg-[#9B2121]/20 text-[#9B2121] px-3 py-1 rounded-full text-sm">
                               {event.category}
                             </span>
                           </div>
                           <h3 className="text-xl font-bold mb-3">{event.title}</h3>
-                          <p className="text-gray-600 text-sm mb-4 flex-grow">
+                          <p className="text-[#FFFFFF]/80 text-sm mb-4 flex-grow">
                             {event.description.length > 100
                               ? `${event.description.substring(0, 100)}...`
                               : event.description}
                           </p>
                           <div className="mt-auto">
-                            <p className="text-sm text-gray-500">
+                            <p className="text-sm text-[#FFFFFF]/70">
                               📅 {formatEventDate(event.start_date, event.start_time)}
                             </p>
-                            <p className="text-sm text-gray-500">
+                            <p className="text-sm text-[#FFFFFF]/70">
                               👥 {event.capacity ? `${event.booked}/${event.capacity}` : 'Unlimited'} spots
                             </p>
-                            <p className="text-sm text-gray-500">
+                            <p className="text-sm text-[#FFFFFF]/70">
                               📍 {event.on_campus ? 'On Campus' : 'Off Campus'}
                             </p>
                           </div>
@@ -196,10 +196,10 @@ export default function EventTabs() {
 
             {activeTab === 2 && (
               <>
-                <h2 className="text-2xl font-semibold mt-8 mb-2">
+                <h2 className="text-2xl font-semibold mt-8 mb-2 text-[#FFFFFF]">
                   Search By Keyword
                 </h2>
-                <p className="mb-8">
+                <p className="mb-8 text-[#FFFFFF]">
                   Find events based on clubs, societies, or categories.
                 </p>
                 <div className="flex flex-col gap-4 items-center">
@@ -208,15 +208,15 @@ export default function EventTabs() {
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     placeholder="e.g. GDG, TedX, Dance"
-                    className="px-4 py-2 w-[60%] bg-[#ffece3] rounded-full text-black border-none"
+                    className="px-4 py-2 w-[60%] bg-[#2E2B2B]/50 rounded-full text-[#FFFFFF] border-none"
                   />
                 </div>
 
-                <h2 className="text-2xl font-semibold mt-20 mb-10">
+                <h2 className="text-2xl font-semibold mt-20 mb-10 text-[#FFFFFF]">
                   Filter by Category
                 </h2>
                 <div className="flex justify-center">
-                  <div className="grid grid-cols-2 gap-x-24 gap-y-8 text-left rounded-2xl cursor-pointer text-[#2c3050] bg-[#ffece3] p-10 w-[60%] mx-auto">
+                  <div className="grid grid-cols-2 gap-x-24 gap-y-8 text-left rounded-2xl cursor-pointer text-[#2E2B2B] bg-[#2E2B2B]/50 p-10 w-[60%] mx-auto">
                     {categories.map((category, i) => (
                       <label key={i} className="flex items-center cursor-pointer space-x-2 text-lg sm:text-xl md:text-2xl">
                         <input
@@ -229,9 +229,9 @@ export default function EventTabs() {
                               setSelectedCategories(selectedCategories.filter(c => c !== category));
                             }
                           }}
-                          className="accent-[#ff7230] border-none"
+                          className="accent-[#9B2121] border-none"
                         />
-                        <span>{category}</span>
+                        <span className="text-[#FFFFFF]">{category}</span>
                       </label>
                     ))}
                   </div>
@@ -240,31 +240,31 @@ export default function EventTabs() {
                 {/* Search Results */}
                 {(searchTerm || selectedCategories.length > 0) && (
                   <div className="mt-12">
-                    <h3 className="text-xl font-semibold mb-6">Search Results</h3>
-                    <div className="eventCards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center text-black">
+                    <h3 className="text-xl font-semibold mb-6 text-[#FFFFFF]">Search Results</h3>
+                    <div className="eventCards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center text-[#FFFFFF]">
                       {getFilteredEvents().map((event) => (
                         <Link href={`/eventdetails/${event.id}`} key={event.id}>
-                          <div className="bg-[#ffece3] p-6 rounded-2xl shadow hover:shadow-lg transition-all duration-300 cursor-pointer h-full">
+                          <div className="bg-[#2E2B2B]/50 p-6 rounded-2xl shadow hover:shadow-lg transition-all duration-300 cursor-pointer h-full">
                             <div className="flex flex-col h-full">
                               <div className="mb-4">
-                                <span className="bg-[#ff7230]/20 text-[#ff7230] px-3 py-1 rounded-full text-sm">
+                                <span className="bg-[#9B2121]/20 text-[#9B2121] px-3 py-1 rounded-full text-sm">
                                   {event.category}
                                 </span>
                               </div>
                               <h3 className="text-xl font-bold mb-3">{event.title}</h3>
-                              <p className="text-gray-600 text-sm mb-4 flex-grow">
+                              <p className="text-[#FFFFFF]/80 text-sm mb-4 flex-grow">
                                 {event.description.length > 100
                                   ? `${event.description.substring(0, 100)}...`
                                   : event.description}
                               </p>
                               <div className="mt-auto">
-                                <p className="text-sm text-gray-500">
+                                <p className="text-sm text-[#FFFFFF]/70">
                                   📅 {formatEventDate(event.start_date, event.start_time)}
                                 </p>
-                                <p className="text-sm text-gray-500">
+                                <p className="text-sm text-[#FFFFFF]/70">
                                   👥 {event.capacity ? `${event.booked}/${event.capacity}` : 'Unlimited'} spots
                                 </p>
-                                <p className="text-sm text-gray-500">
+                                <p className="text-sm text-[#FFFFFF]/70">
                                   📍 {event.on_campus ? 'On Campus' : 'Off Campus'}
                                 </p>
                               </div>
