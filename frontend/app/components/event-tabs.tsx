@@ -52,9 +52,9 @@ export default function EventTabs() {
   const getFilteredEvents = () => {
     const filteredEvents = filterEvents(events);
     if (activeTab === 0) {
-      return filteredEvents.filter(event => !event.club_rep);
-    } else if (activeTab === 1) {
       return filteredEvents.filter(event => event.club_rep);
+    } else if (activeTab === 1) {
+      return filteredEvents.filter(event => !event.club_rep);
     }
     return filteredEvents;
   };
@@ -72,12 +72,12 @@ export default function EventTabs() {
 
   const tabItems = [
     {
-      title: "Events Hosted By Waseda",
-      description: "Here you can find events organized by Waseda University.",
-    },
-    {
       title: "Created & Hosted By Students",
       description: "Discover events created by students for students.",
+    },
+    {
+      title: "Events Hosted By Waseda",
+      description: "Here you can find events organized by Waseda University.",
     },
   ];
 
@@ -105,12 +105,12 @@ export default function EventTabs() {
           style={{ padding: "1rem", cursor: "pointer", flex: 1 }}
         >
           <Image
-            src="/images/gradcap.png"
-            alt="Graduation Cap"
-            width={64}
-            height={64}
+            src="/images/students.png"
+            alt="Students"
+            width={48}
+            height={48}
           />
-          <p>Events Hosted By Waseda</p>
+          <p>Created & Hosted By Students</p>
         </div>
 
         <div
@@ -119,12 +119,12 @@ export default function EventTabs() {
           style={{ padding: "1rem", cursor: "pointer", flex: 1 }}
         >
           <Image
-            src="/images/students.png"
-            alt="Students"
-            width={48}
-            height={48}
+            src="/images/gradcap.png"
+            alt="Graduation Cap"
+            width={64}
+            height={64}
           />
-          <p>Created & Hosted By Students</p>
+          <p>Events Hosted By Waseda</p>
         </div>
 
         <div
