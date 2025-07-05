@@ -87,8 +87,21 @@ MIDDLEWARE = [
 
 # CORS settings
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Next.js development server URL
+     
+    "https://connectwaseda.vercel.app", # Next.js development server URL
+    "http://localhost:3000",
 ]
+
+# CSRF settings
+CSRF_TRUSTED_ORIGINS = [
+    # "http://localhost:3000",  # Next.js development server URL
+    "https://connectwaseda.vercel.app",
+    "http://localhost:3000", 
+]
+CSRF_COOKIE_SAMESITE = 'Lax'
+CSRF_COOKIE_HTTPONLY = False  # Must be False to allow JavaScript to read the token
+CSRF_USE_SESSIONS = False
+CSRF_COOKIE_NAME = 'csrftoken'
 
 # Add these additional CORS settings for better compatibility
 CORS_ALLOW_CREDENTIALS = True
@@ -136,17 +149,43 @@ WSGI_APPLICATION = 'Connect_Waseda_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# local connection
+# DATABASES = {
+#     'default': {
+#         'ENGINE':   'django.db.backends.postgresql',
+#         'NAME':     env('DB_NAME'),
+#         'USER':     env('DB_USER'),
+#         'PASSWORD': env('DB_PASSWORD'),
+#         'HOST':     env('DB_HOST', default='127.0.0.1'),
+#         'PORT':     env('DB_PORT', default='5432'),
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('POSTGRES_DB'),
-        'USER': env('POSTGRES_USER'),
-        'PASSWORD': env('POSTGRES_PASSWORD'),
-        'HOST': env('POSTGRES_HOST'),
-        'PORT': env('POSTGRES_PORT', default='5432'),
-    }
+    'default': env.db('DATABASE_URL')
+
 }
 
+# supabase credentials
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': env('POSTGRES_DB'),
+#         'USER': env('POSTGRES_USER'),
+#         'PASSWORD': env('POSTGRES_PASSWORD'),
+#         'HOST': env('POSTGRES_HOST'),
+#         'PORT': env('POSTGRES_PORT'),
+#         'OPTIONS': {
+#             'sslmode': 'require',
+#         },
+
+#     }
+# }
+
+ALLOWED_HOSTS = [
+    "cwdef-914112773915.asia-northeast1.run.app",
+    "*",
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

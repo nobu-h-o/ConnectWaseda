@@ -1,0 +1,35 @@
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+substitutions:
+  _REGION: "asia-northeast1"
+
+steps:
+  # 1) Build the image
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "build",
+        "-t", "gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA",
+        "-f", "backend/Dockerfile",
+        "backend"
+      ]
+
+  # 2) Push it
+  - name: "gcr.io/cloud-builders/docker"
+    args: [ "push", "gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA" ]
+
+  # 3) Deploy to your single service—and inherit the console’s env-vars
+  - name: "gcr.io/cloud-builders/gcloud"
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        gcloud run deploy cwdef \
+          --image=gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA \
+          --platform=managed \
+          --region=$_REGION \
+          --allow-unauthenticated
+
+images:
+  - "gcr.io/$PROJECT_ID/cwdef-backend:$SHORT_SHA"
