@@ -91,8 +91,19 @@ export default async function EventDetails(props: {
             {/* Host Notes */}
             {event.host_notes && (
               <section>
-                <h2 className="text-2xl font-semibold mb-4">Notes from the Host</h2>
-                <p className="text-gray-300 whitespace-pre-wrap">{event.host_notes}</p>
+                <h2 className="text-2xl font-semibold mb-4">Registration & Additional Information</h2>
+                <p className="text-gray-300 mb-4">
+                  To register for this event and receive additional details from the host, please click the button below to access the registration form.
+                </p>
+                <a 
+                  href={event.host_notes}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-[#ff7230] text-white py-3 px-6 rounded-full font-semibold
+                           hover:bg-[#ff8f5a] transition-colors text-center"
+                >
+                  Register & Get Event Details
+                </a>
               </section>
             )}
           </div>
@@ -130,12 +141,19 @@ export default async function EventDetails(props: {
               </div>
 
               {/* Register Button */}
-              <button 
-                className="w-full bg-[#ff7230] text-white py-3 px-6 rounded-full font-semibold
-                         hover:bg-[#ff8f5a] transition-colors"
+              <a 
+                href={event.host_notes || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`w-full py-3 px-6 rounded-full font-semibold transition-colors text-center block ${
+                  event.host_notes 
+                    ? 'bg-[#ff7230] text-white hover:bg-[#ff8f5a]' 
+                    : 'bg-gray-400 text-gray-600 cursor-not-allowed'
+                }`}
+                onClick={!event.host_notes ? (e) => e.preventDefault() : undefined}
               >
-                Register for Event
-              </button>
+                {event.host_notes ? 'Register for Event' : 'Registration Unavailable'}
+              </a>
             </div>
           </div>
         </div>
