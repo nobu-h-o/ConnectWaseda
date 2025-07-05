@@ -201,24 +201,24 @@ const CreateEvent = () => {
 
   if (status === "loading") {
     return (
-      <div className="min-h-screen bg-[#2c3050] text-white flex items-center justify-center">
+      <div className="min-h-screen bg-[#F8F8F8] text-[#2E2B2B] flex items-center justify-center">
         <div className="text-xl">Loading...</div>
       </div>
     );
   }
 
   return (
-    <div className="bg-[#2c3050] min-h-screen flex flex-col items-center pt-16 pb-16">
+    <div className="bg-[#F8F8F8] min-h-screen flex flex-col items-center pt-16 pb-16">
       <Header />
       
       {/* Page Title */}
-      <h1 className="text-white text-4xl font-semibold mb-10">
+      <h1 className="text-[#2E2B2B] text-4xl font-semibold mb-10">
         Create A New Event
       </h1>
 
       {/* Error Message */}
       {error && (
-        <div className="w-full max-w-2xl mb-6 p-4 bg-red-500/80 text-white rounded-lg">
+        <div className="w-full max-w-2xl mb-6 p-4 bg-red-500/80 text-[#2E2B2B] rounded-lg">
           {error}
         </div>
       )}
@@ -226,11 +226,11 @@ const CreateEvent = () => {
       {/* Form Container */}
       <form
         onSubmit={handleSubmit}
-        className="bg-[#A0A7E0]/80 rounded-2xl w-full max-w-2xl px-12 py-14 space-y-8"
+        className="bg-[#2E2B2B]/50 rounded-2xl w-full max-w-2xl px-12 py-14 space-y-8"
       >
         {/* Title */}
         <div className="flex flex-col space-y-2">
-          <label htmlFor="title" className="text-white text-lg font-medium">
+          <label htmlFor="title" className="text-[#FFFFFF] text-lg font-medium">
             Title of Event<span className="text-red-500">*</span>
           </label>
           <input
@@ -241,15 +241,15 @@ const CreateEvent = () => {
             value={formData.title}
             onChange={handleInputChange}
             placeholder="Enter event title"
-            className="w-full rounded-full bg-[#FFECE3] px-5 py-3 
-                     text-base placeholder-gray-600 text-[#2c3050]
-                     focus:outline-none focus:ring-2 focus:ring-[#FFA500]"
+            className="w-full rounded-full bg-[#FFFFFF] px-5 py-3 
+                     text-base placeholder-gray-600 text-[#2E2B2B]
+                     focus:outline-none focus:ring-2 focus:ring-[#9B2121]"
           />
         </div>
 
         {/* Description */}
         <div className="flex flex-col space-y-2">
-          <label htmlFor="description" className="text-white text-lg font-medium">
+          <label htmlFor="description" className="text-[#FFFFFF] text-lg font-medium">
             Event Description<span className="text-red-500">*</span>
           </label>
           <textarea
@@ -260,15 +260,15 @@ const CreateEvent = () => {
             value={formData.description}
             onChange={handleInputChange}
             placeholder="Describe your event"
-            className="w-full rounded-xl bg-[#FFECE3] px-5 py-3 
-                     text-base placeholder-gray-600 text-[#2c3050]
-                     focus:outline-none focus:ring-2 focus:ring-[#FFA500]"
+            className="w-full rounded-xl bg-[#FFFFFF] px-5 py-3 
+                     text-base placeholder-gray-600 text-[#2E2B2B]
+                     focus:outline-none focus:ring-2 focus:ring-[#9B2121]"
           />
         </div>
 
         {/* Category */}
         <div className="flex flex-col space-y-2">
-          <label htmlFor="category" className="text-white text-lg font-medium">
+          <label htmlFor="category" className="text-[#FFFFFF] text-lg font-medium">
             Event Category<span className="text-red-500">*</span>
           </label>
           <select
@@ -277,10 +277,10 @@ const CreateEvent = () => {
             required
             value={formData.category}
             onChange={handleInputChange}
-            className="w-full rounded-full bg-[#FFECE3] px-5 py-3 
-                     text-base text-[#2c3050] placeholder-gray-600
+            className="w-full rounded-full bg-[#FFFFFF] px-5 py-3 
+                     text-base text-[#2E2B2B] placeholder-gray-600
                      appearance-none hover:cursor-pointer
-                     focus:outline-none focus:ring-2 focus:ring-[#FFA500]"
+                     focus:outline-none focus:ring-2 focus:ring-[#9B2121]"
           >
             <option value="" disabled>Select event category</option>
             {categories.map((c) => (
@@ -291,7 +291,7 @@ const CreateEvent = () => {
 
         {/* Language */}
         <div className="flex flex-col space-y-2">
-          <label htmlFor="language" className="text-white text-lg font-medium">
+          <label htmlFor="language" className="text-[#FFFFFF] text-lg font-medium">
             Event Language<span className="text-red-500">*</span>
           </label>
           <select
@@ -300,10 +300,10 @@ const CreateEvent = () => {
             required
             value={formData.language}
             onChange={handleInputChange}
-            className="w-full rounded-full bg-[#FFECE3] px-5 py-3 
-                     text-base text-[#2c3050] placeholder-gray-600
+            className="w-full rounded-full bg-[#FFFFFF] px-5 py-3 
+                     text-base text-[#2E2B2B] placeholder-gray-600
                      appearance-none hover:cursor-pointer
-                     focus:outline-none focus:ring-2 focus:ring-[#FFA500]"
+                     focus:outline-none focus:ring-2 focus:ring-[#9B2121]"
           >
             <option value="" disabled>Select event language</option>
             {languages.map((l) => (
@@ -314,7 +314,7 @@ const CreateEvent = () => {
 
         {/* Start Date */}
         <div className="flex flex-col space-y-2">
-          <label htmlFor="start_date" className="text-white text-lg font-medium">
+          <label htmlFor="start_date" className="text-[#FFFFFF] text-lg font-medium">
             Start Date<span className="text-red-500">*</span>
           </label>
           <input
@@ -324,16 +324,16 @@ const CreateEvent = () => {
             required
             value={formData.start_date}
             onChange={handleInputChange}
-            className="w-full rounded-full bg-[#FFECE3] px-5 py-3 
-                     text-base text-[#2c3050]
-                     focus:outline-none focus:ring-2 focus:ring-[#FFA500]
+            className="w-full rounded-full bg-[#FFFFFF] px-5 py-3 
+                     text-base text-[#2E2B2B]
+                     focus:outline-none focus:ring-2 focus:ring-[#9B2121]
                      hover:cursor-pointer"
           />
         </div>
 
         {/* End Date */}
         <div className="flex flex-col space-y-2">
-          <label htmlFor="end_date" className="text-white text-lg font-medium">
+          <label htmlFor="end_date" className="text-[#FFFFFF] text-lg font-medium">
             End Date<span className="text-red-500">*</span>
           </label>
           <input
@@ -343,19 +343,19 @@ const CreateEvent = () => {
             required
             value={formData.end_date}
             onChange={handleInputChange}
-            className="w-full rounded-full bg-[#FFECE3] px-5 py-3 
-                     text-base text-[#2c3050]
-                     focus:outline-none focus:ring-2 focus:ring-[#FFA500]
+            className="w-full rounded-full bg-[#FFFFFF] px-5 py-3 
+                     text-base text-[#2E2B2B]
+                     focus:outline-none focus:ring-2 focus:ring-[#9B2121]
                      hover:cursor-pointer"
           />
         </div>
 
         {/* Start & End Time */}
         <div className="flex flex-col space-y-2">
-          <span className="text-white text-lg font-medium">Event Time<span className="text-red-500">*</span></span>
+          <span className="text-[#FFFFFF] text-lg font-medium">Event Time<span className="text-red-500">*</span></span>
           <div className="flex gap-6">
             <div className="flex-1 flex flex-col space-y-1">
-              <label htmlFor="start_time" className="text-white text-base font-medium">
+              <label htmlFor="start_time" className="text-[#FFFFFF] text-base font-medium">
                 Start Time
               </label>
               <input
@@ -365,14 +365,14 @@ const CreateEvent = () => {
                 required
                 value={formData.start_time}
                 onChange={handleInputChange}
-                className="w-full rounded-full bg-[#FFECE3] px-5 py-3 
-                         text-base text-[#2c3050]
-                         focus:outline-none focus:ring-2 focus:ring-[#FFA500]
+                className="w-full rounded-full bg-[#FFFFFF] px-5 py-3 
+                         text-base text-[#2E2B2B]
+                         focus:outline-none focus:ring-2 focus:ring-[#9B2121]
                          hover:cursor-pointer"
               />
             </div>
             <div className="flex-1 flex flex-col space-y-1">
-              <label htmlFor="end_time" className="text-white text-base font-medium">
+              <label htmlFor="end_time" className="text-[#FFFFFF] text-base font-medium">
                 End Time
               </label>
               <input
@@ -382,9 +382,9 @@ const CreateEvent = () => {
                 required
                 value={formData.end_time}
                 onChange={handleInputChange}
-                className="w-full rounded-full bg-[#FFECE3] px-5 py-3 
-                         text-base text-[#2c3050]
-                         focus:outline-none focus:ring-2 focus:ring-[#FFA500]
+                className="w-full rounded-full bg-[#FFFFFF] px-5 py-3 
+                         text-base text-[#2E2B2B]
+                         focus:outline-none focus:ring-2 focus:ring-[#9B2121]
                          hover:cursor-pointer"
               />
             </div>
@@ -393,7 +393,7 @@ const CreateEvent = () => {
 
         {/* Capacity */}
         <div className="flex flex-col space-y-2">
-          <label htmlFor="capacity" className="text-white text-lg font-medium">
+          <label htmlFor="capacity" className="text-[#FFFFFF] text-lg font-medium">
             Event Capacity
           </label>
           <input
@@ -404,15 +404,15 @@ const CreateEvent = () => {
             value={formData.capacity}
             onChange={handleInputChange}
             placeholder="Leave empty for unlimited capacity"
-            className="w-full rounded-full bg-[#FFECE3] px-5 py-3 
-                     text-base placeholder-gray-600 text-[#2c3050]
-                     focus:outline-none focus:ring-2 focus:ring-[#FFA500]"
+            className="w-full rounded-full bg-[#FFFFFF] px-5 py-3 
+                     text-base placeholder-gray-600 text-[#2E2B2B]
+                     focus:outline-none focus:ring-2 focus:ring-[#9B2121]"
           />
         </div>
 
         {/* Notes */}
         <div className="flex flex-col space-y-2">
-          <label htmlFor="host_notes" className="text-white text-lg font-medium">
+          <label htmlFor="host_notes" className="text-[#FFFFFF] text-lg font-medium">
             Form to registration<span className="text-red-500">*</span>
           </label>
           <textarea
@@ -423,9 +423,9 @@ const CreateEvent = () => {
             value={formData.host_notes}
             onChange={handleInputChange}
             placeholder="Insert Google Form link here"
-            className="w-full rounded-xl bg-[#FFECE3] px-5 py-3 
-                     text-base placeholder-gray-600 text-[#2c3050]
-                     focus:outline-none focus:ring-2 focus:ring-[#FFA500]"
+            className="w-full rounded-xl bg-[#FFFFFF] px-5 py-3 
+                     text-base placeholder-gray-600 text-[#2E2B2B]
+                     focus:outline-none focus:ring-2 focus:ring-[#9B2121]"
           />
         </div>
 
@@ -438,9 +438,9 @@ const CreateEvent = () => {
               name="club_rep"
               checked={formData.club_rep}
               onChange={(e) => setFormData(prev => ({ ...prev, club_rep: e.target.checked }))}
-              className="w-5 h-5 rounded text-[#FFA500] focus:ring-[#FFA500]"
+              className="w-5 h-5 rounded text-[#9B2121] focus:ring-[#9B2121]"
             />
-            <label htmlFor="club_rep" className="text-white text-base">
+            <label htmlFor="club_rep" className="text-[#FFFFFF] text-base">
               I am a club representative
             </label>
           </div>
@@ -451,9 +451,9 @@ const CreateEvent = () => {
               name="on_campus"
               checked={formData.on_campus}
               onChange={(e) => setFormData(prev => ({ ...prev, on_campus: e.target.checked }))}
-              className="w-5 h-5 rounded text-[#FFA500] focus:ring-[#FFA500]"
+              className="w-5 h-5 rounded text-[#9B2121] focus:ring-[#9B2121]"
             />
-            <label htmlFor="on_campus" className="text-white text-base">
+            <label htmlFor="on_campus" className="text-[#FFFFFF] text-base">
               This event is on campus
             </label>
           </div>
@@ -464,9 +464,9 @@ const CreateEvent = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="bg-[#FFECE3] text-[#2c3050] 
+            className="bg-[#9B2121] text-[#FFFFFF] 
                      rounded-full px-10 py-4 text-lg font-semibold
-                     hover:brightness-105 transition
+                     hover:bg-[#7a1b1b] transition
                      disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? "Creating Event..." : "Create Event"}

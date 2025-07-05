@@ -18,19 +18,19 @@ export default function CreateProfile() {
 
   if (status === "loading") {
     return (
-      <div className="min-h-screen bg-[#2c3050] text-white flex items-center justify-center">
+      <div className="min-h-screen bg-[#F8F8F8] text-[#2E2B2B] flex items-center justify-center">
         <div className="text-xl">Loading...</div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#2c3050] text-white px-6 py-8 flex flex-col items-center">
+    <div className="min-h-screen bg-[#F8F8F8] text-[#2E2B2B] px-6 py-8 flex flex-col items-center">
       <Header />
 
       {/* Breadcrumb */}
       <nav aria-label="Breadcrumb" className="w-full max-w-3xl mb-4">
-        <Link href="/" className="text-sm text-gray-300 hover:text-white transition">
+        <Link href="/" className="text-sm text-gray-300 hover:text-[#2E2B2B] transition">
           ← Back to Home
         </Link>
       </nav>
@@ -45,7 +45,7 @@ export default function CreateProfile() {
               key={n}
               className={
                 n === 1
-                  ? "w-8 h-8 rounded-full bg-[#FFECE3] text-[#2c3050] flex items-center justify-center font-bold"
+                  ? "w-8 h-8 rounded-full bg-[#2E2B2B] text-[#FFFFFF] flex items-center justify-center font-bold"
                   : "w-8 h-8 rounded-full bg-[#A0A7E0]/70 text-gray-200 flex items-center justify-center"
               }
             >
@@ -58,7 +58,7 @@ export default function CreateProfile() {
       {/* Form Card */}
       <form
         aria-label="Create Profile Form"
-        className="w-full max-w-3xl bg-[#A0A7E0] text-[#2c3050]
+        className="w-full max-w-3xl bg-[#A0A7E0] text-[#FFFFFF]
                    rounded-3xl shadow-xl p-8 grid grid-cols-1 md:grid-cols-2
                    gap-x-6 gap-y-6"
       >
@@ -73,7 +73,7 @@ export default function CreateProfile() {
           required
           placeholder="Your full name"
           className="w-full rounded-full px-4 py-3 text-base text-center
-                     bg-[#FFECE3] placeholder-gray-500 focus:outline-none
+                     bg-[#2E2B2B] placeholder-gray-500 focus:outline-none
                      focus:ring-2 focus:ring-[#FF7230]"
         />
 
@@ -87,7 +87,7 @@ export default function CreateProfile() {
           required
           defaultValue=""
           className="w-full rounded-full px-4 py-3 text-base text-center
-                     bg-[#FFECE3] placeholder-gray-500 appearance-none
+                     bg-[#2E2B2B] placeholder-gray-500 appearance-none
                      hover:cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#FF7230]"
         >
           <option value="" disabled>
@@ -112,7 +112,7 @@ export default function CreateProfile() {
           type="month"
           required
           className="w-full rounded-full px-4 py-3 text-base text-center
-                     bg-[#FFECE3] placeholder-gray-500
+                     bg-[#2E2B2B] placeholder-gray-500
                      focus:outline-none focus:ring-2 focus:ring-[#FF7230]
                      hover:cursor-pointer"
         />
@@ -128,7 +128,7 @@ export default function CreateProfile() {
           required
           placeholder="080-1234-5678"
           className="w-full rounded-full px-4 py-3 text-base text-center
-                     bg-[#FFECE3] placeholder-gray-500
+                     bg-[#2E2B2B] placeholder-gray-500
                      focus:outline-none focus:ring-2 focus:ring-[#FF7230]"
         />
       </form>
