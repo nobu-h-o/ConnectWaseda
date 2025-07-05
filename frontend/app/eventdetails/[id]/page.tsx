@@ -74,7 +74,7 @@ export default async function EventDetails(props: {
               {event.category}
             </span>
           </div>
-          <div className="text-lg text-gray-300">
+          <div className="text-lg text-[#2E2B2B]">
             {event.club_rep ? 'Student Event' : 'Waseda Event'}
           </div>
         </div>
@@ -85,21 +85,21 @@ export default async function EventDetails(props: {
             {/* Description */}
             <section>
               <h2 className="text-2xl font-semibold mb-4">About this Event</h2>
-              <p className="text-gray-300 whitespace-pre-wrap">{event.description}</p>
+              <p className="text-[#2E2B2B] whitespace-pre-wrap">{event.description}</p>
             </section>
 
             {/* Host Notes */}
             {event.host_notes && (
               <section>
                 <h2 className="text-2xl font-semibold mb-4">Registration & Additional Information</h2>
-                <p className="text-gray-300 mb-4">
+                <p className="text-[#2E2B2B] mb-4">
                   To register for this event and receive additional details from the host, please click the button below to access the registration form.
                 </p>
                 <a 
                   href={event.host_notes}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-[#9B2121] text-[#2E2B2B] py-3 px-6 rounded-full font-semibold
+                  className="inline-block bg-[#9B2121] text-[#F8F8F8] py-3 px-6 rounded-full font-semibold
                            hover:bg-[#7a1b1b] transition-colors text-center"
                 >
                   Register & Get Event Details
@@ -110,7 +110,7 @@ export default async function EventDetails(props: {
 
           {/* Event Info Sidebar */}
           <div>
-            <div className="bg-[#2E2B2B] text-[#FFFFFF] p-6 rounded-2xl space-y-6">
+            <div className="bg-white text-[#2E2B2B] p-6 rounded-2xl space-y-6 shadow-lg">
               {/* Date & Time */}
               <div>
                 <h3 className="font-semibold mb-2">Date and Time</h3>
@@ -147,7 +147,7 @@ export default async function EventDetails(props: {
                 rel="noopener noreferrer"
                 className={`w-full py-3 px-6 rounded-full font-semibold transition-colors text-center block ${
                   event.host_notes 
-                    ? 'bg-[#9B2121] text-[#2E2B2B] hover:bg-[#7a1b1b]' 
+                    ? 'bg-[#9B2121] text-[#F8F8F8] hover:bg-[#7a1b1b]' 
                     : 'bg-gray-400 text-gray-600 cursor-not-allowed'
                 }`}
                 onClick={!event.host_notes ? (e) => e.preventDefault() : undefined}

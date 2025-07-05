@@ -159,7 +159,7 @@ export default function EventTabs() {
                 <h2 className="text-2xl font-semibold mt-8 mb-2 text-[#FFFFFF]">{tabItems[activeTab].title}</h2>
                 <p className="mb-8 text-[#FFFFFF]">{tabItems[activeTab].description}</p>
                 
-                <div className="eventCards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center text-[#FFFFFF]">
+                <div className="eventCards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center text-[#FFFFFF]">
                   {getFilteredEvents().map((event) => (
                     <Link href={`/eventdetails/${event.id}`} key={event.id}>
                       <div className="bg-[#2E2B2B]/50 p-6 rounded-2xl shadow hover:shadow-lg transition-all duration-300 cursor-pointer h-full">
@@ -241,7 +241,7 @@ export default function EventTabs() {
                 {(searchTerm || selectedCategories.length > 0) && (
                   <div className="mt-12">
                     <h3 className="text-xl font-semibold mb-6 text-[#FFFFFF]">Search Results</h3>
-                    <div className="eventCards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center text-[#FFFFFF]">
+                    <div className="eventCards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center text-[#FFFFFF]">
                       {getFilteredEvents().map((event) => (
                         <Link href={`/eventdetails/${event.id}`} key={event.id}>
                           <div className="bg-[#2E2B2B]/50 p-6 rounded-2xl shadow hover:shadow-lg transition-all duration-300 cursor-pointer h-full">
