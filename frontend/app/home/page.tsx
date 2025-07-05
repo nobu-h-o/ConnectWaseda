@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/app/components/ui/button";
 import Header from "@/app/components/header";
-import Footer from "@/app/components/footer";
 
 export default function HomePage() {
   return (
@@ -106,7 +105,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 md:px-12 lg:px-24 max-w-7xl mx-auto bg-[#ff7230] rounded-lg">
+      <section className="py-16 px-4 md:px-12 lg:px-24 bg-[#ff7230]">
         <div className="flex flex-col items-center text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
           <p className="text-xl max-w-2xl mb-8">
@@ -119,8 +118,6 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
-      
-      <Footer />
     </div>
   );
 }
