@@ -144,7 +144,7 @@ body {
 @media (max-width: 768px) {
   .eventCards {
     grid-template-columns: 1fr; /* One card per row */
-    gap: 1rem; /* Adjust gap for small screens */
+    gap: 1.5rem; /* Adjust gap for small screens */
   }
 
   .eventCards > div {
@@ -158,7 +158,7 @@ body {
 @media (min-width: 768px) and (max-width: 1023px) {
   .eventCards {
     grid-template-columns: repeat(3, 1fr); /* Three cards per row */
-    gap: 1.5rem; /* Increased gap between cards */
+    gap: 2rem; /* Increased gap between cards */
   }
 
   .eventCards > div {
@@ -172,7 +172,7 @@ body {
 @media (min-width: 1024px) {
   .eventCards {
     grid-template-columns: repeat(3, 1fr); /* Three cards per row */
-    gap: 0rem; /* Larger gap between cards */
+    gap: 3rem; /* Larger gap between cards */
   }
 
   .eventCards > div {
