@@ -87,12 +87,14 @@ MIDDLEWARE = [
 
 # CORS settings
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Next.js development server URL
+    # "http://localhost:3000", 
+    "https://connectwaseda.vercel.app/home", # Next.js development server URL
 ]
 
 # CSRF settings
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:3000",  # Next.js development server URL
+    # "http://localhost:3000",  # Next.js development server URL
+    "https://connectwaseda.vercel.app/home"
 ]
 CSRF_COOKIE_SAMESITE = 'Lax'
 CSRF_COOKIE_HTTPONLY = False  # Must be False to allow JavaScript to read the token
