@@ -413,15 +413,16 @@ const CreateEvent = () => {
         {/* Notes */}
         <div className="flex flex-col space-y-2">
           <label htmlFor="host_notes" className="text-white text-lg font-medium">
-            Notes from the Host
+            Form to registration<span className="text-red-500">*</span>
           </label>
           <textarea
             id="host_notes"
             name="host_notes"
             rows={4}
+            required
             value={formData.host_notes}
             onChange={handleInputChange}
-            placeholder="Additional information for attendees"
+            placeholder="Insert Google Form link here"
             className="w-full rounded-xl bg-[#FFECE3] px-5 py-3 
                      text-base placeholder-gray-600 text-[#2c3050]
                      focus:outline-none focus:ring-2 focus:ring-[#FFA500]"
