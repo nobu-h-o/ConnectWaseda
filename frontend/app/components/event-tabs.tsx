@@ -121,8 +121,8 @@ export default function EventTabs() {
           <Image
             src="/images/gradcap.png"
             alt="Graduation Cap"
-            width={64}
-            height={64}
+            width={48}
+            height={48}
           />
           <p><span className="hidden sm:inline">Events Hosted By </span>Waseda</p>
         </div>
