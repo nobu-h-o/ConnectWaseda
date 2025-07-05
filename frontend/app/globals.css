@@ -60,6 +60,19 @@ body {
   cursor: pointer;
 }
 
+.tab1 {
+  border-top-right-radius: 1rem;
+}
+
+.tab2 {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.tab3 {
+  border-top-left-radius: 1rem;
+}
+
 .tab1 p, .tab2 p, .tab3 p {
   width: 50%;
 }
