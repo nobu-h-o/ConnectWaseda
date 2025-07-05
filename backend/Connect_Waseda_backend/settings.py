@@ -87,12 +87,14 @@ MIDDLEWARE = [
 
 # CORS settings
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Next.js development server URL
+    # "http://localhost:3000", 
+    "https://connectwaseda.vercel.app/home", # Next.js development server URL
 ]
 
 # CSRF settings
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:3000",  # Next.js development server URL
+    # "http://localhost:3000",  # Next.js development server URL
+    "https://connectwaseda.vercel.app/home"
 ]
 CSRF_COOKIE_SAMESITE = 'Lax'
 CSRF_COOKIE_HTTPONLY = False  # Must be False to allow JavaScript to read the token
@@ -145,7 +147,7 @@ WSGI_APPLICATION = 'Connect_Waseda_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-
+# local connection
 # DATABASES = {
 #     'default': {
 #         'ENGINE':   'django.db.backends.postgresql',
@@ -157,22 +159,31 @@ WSGI_APPLICATION = 'Connect_Waseda_backend.wsgi.application'
 #     }
 # }
 
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('POSTGRES_DB'),
-        'USER': env('POSTGRES_USER'),
-        'PASSWORD': env('POSTGRES_PASSWORD'),
-        'HOST': env('POSTGRES_HOST'),
-        'PORT': env('POSTGRES_PORT'),
-        'OPTIONS': {
-            'sslmode': 'require',
-        },
+    'default': env.db('DATABASE_URL')
 
-    }
 }
 
+# supabase credentials
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': env('POSTGRES_DB'),
+#         'USER': env('POSTGRES_USER'),
+#         'PASSWORD': env('POSTGRES_PASSWORD'),
+#         'HOST': env('POSTGRES_HOST'),
+#         'PORT': env('POSTGRES_PORT'),
+#         'OPTIONS': {
+#             'sslmode': 'require',
+#         },
+
+#     }
+# }
+
+ALLOWED_HOSTS = [
+    "cwdef-914112773915.asia-northeast1.run.app",
+    "*",
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
