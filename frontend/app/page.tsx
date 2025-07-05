@@ -29,7 +29,7 @@ export default async function Home() {
         
         <div className="flex justify-center gap-4 mb-8">
           <Link href="/eventcreation">
-            <Button size="lg" className="bg-[#ff7230] hover:bg-[#e05e20] text-white">
+            <Button size="lg" className="bg-[#ff7230] hover:bg-[#e05e20] text-white rounded-full">
               Create Event
             </Button>
           </Link>
