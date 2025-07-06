@@ -169,7 +169,7 @@ export default function EventTabs() {
                               {event.category}
                             </span>
                           </div>
-                          <h3 className="text-xl font-bold mb-3">{event.title}</h3>
+                          <h3 className="text-xl font-bold mb-3 text-[#FFFFFF]">{event.title}</h3>
                           <p className="text-[#FFFFFF]/80 text-sm mb-4 flex-grow">
                             {event.description.length > 100
                               ? `${event.description.substring(0, 100)}...`
@@ -251,7 +251,7 @@ export default function EventTabs() {
                                   {event.category}
                                 </span>
                               </div>
-                              <h3 className="text-xl font-bold mb-3">{event.title}</h3>
+                              <h3 className="text-xl font-bold mb-3 text-[#FFFFFF]">{event.title}</h3>
                               <p className="text-[#FFFFFF]/80 text-sm mb-4 flex-grow">
                                 {event.description.length > 100
                                   ? `${event.description.substring(0, 100)}...`
